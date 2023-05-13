@@ -14,22 +14,19 @@ int main() {
 
 	if (statement.is_open()) {
 
-		for (int i = 0; i < 10; ++i) {
-
-			statement >> name[i] >> surname[i] >> amount_to_be_paid[i] >> data[i];
-
-		}
-
 		int max_sum = 0;
 		int total_sum = 0;
 		int max;
 
 		for (int i = 0; i < 10; ++i) {
-			
+
+			statement >> name[i] >> surname[i] >> amount_to_be_paid[i] >> data[i];
+
 			if (amount_to_be_paid[i] > max_sum) {
 
 				max_sum = amount_to_be_paid[i];
 				max = i;
+
 			}
 
 			total_sum += amount_to_be_paid[i];
@@ -39,8 +36,7 @@ int main() {
 				std::cout << "Person with the highest payout: " << name[max] << " " << surname[max] << std::endl;
 
 			}
-
-		}			
+		}					
 
 		std::cout << "The maximum payout amount is: " << max_sum << std::endl;
 		std::cout << "The total amount according to the statement: " << total_sum << std::endl;
